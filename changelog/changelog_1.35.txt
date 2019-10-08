@@ -1,0 +1,31 @@
+- Quadro de estat�ticas de tipos de usu�rios cadastrados no sistema (Em: Admin->Usu�rios->Resumo);
+
+- Filtro de usu�rios por categoria (Em: Admin->Usu�rios);
+
+- Estat�stica de chamados abertos por usu�rios somente abertura (Em: ocorrências->Relat�rios->Chamados abertos pelo usu�rio-final);
+
+- Relat�rio de SLAs para chamados abertos por usu�rios somente abertura (A partir da tela de estat�sticas de chamados abertos pelo usu�rio-final);
+
+- Possibilidade de confirmar ou cancelar, diretamente pelo sistema, o cadastro de usu�rios somente abertura (Em: Admin->Usu�rios->Resumo);
+
+- Armazenamento do hist�rico de altera��o de hardware dos equipamentos (similar ao hist�rico de localiza��es) (Em: Op��o "Hist�rico de Trocas" nos
+detalhes do equipamento).
+
++upload de imagens: 
+	- na abertura e edi��o de chamados;
+	- no cadastro e edi��o de modelos de equipamentos;
+	- no cadastro e edi��o de equipamentos;
+(imagens carregadas nos chamados ficam automaticamente associadas aos equipamentos correspondentes);
+(imagens carregadas para um modelo ficam automaticamente associadas aos equipamentos correspondentes);
+	
+- interface de configura��o para upload de imagens (Em Admin->Configura��es->Configura��es gerais);
+
+- corre��o do script de busca de solu��es no sistema (n�o estava retornando todas as ocorrências com o termo pesquisado);
+
+- Possibilidade de filtrar a busca de solu��es por somente chamados que contenham imagens anexas (ocorrências->Solu��es);
+
+- O campo para armazenar o nome de usu�rio para autentica��o SMTP foi aumentado para 40 caracteres, 
+(Em alguns sistemas os nomes devem ir completos (com o '@') e ficam maiores do que 20 caracteres, ficando truncados no banco).
+
+- corre��es de bugs menores;
+

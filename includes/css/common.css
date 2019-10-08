@@ -1,0 +1,127 @@
+
+html,form {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a img {
+    border: none;
+}
+
+#pnlPrincipalAplicacao,#pnlConteudo,.pnlPrincipal {
+    height: 100%;
+    width: 100%;
+}
+
+#cabecalho {
+    background-color: #C7D9FD;
+    height: 99px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    background-image: url(../imgs/bg-header.png);
+    background-repeat: repeat-x;
+}
+
+#pixture-reloaded {
+    font-family:  Helvetica, Arial, "Lucida Grande", Verdana, sans-serif;
+    font-size: 12px;
+    color: #191e14;
+    background: #f6f9fb url(bg-wall.png) repeat-x left top;
+}
+
+.zeroBodySpace {
+    padding: 0px;
+}
+
+.outputText,.messageError,.messageWarning,.messageInfo {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.bottom {
+    font-size: 9px;
+    text-align: center;
+    vertical-align: middle;
+    color: #8E969D;
+}
+
+.tableMessageClass {
+    border: none;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+.messageError,.messageWarning,.messageInfo {
+    height: 10px;
+    width: 100%;
+}
+
+.messageError {
+    color: #E20000
+}
+
+.messageWarning {
+    color: #F6B211
+}
+
+.messageInfo {
+    color: #003EA7;
+}
+
+.btnToolbar {
+    width: 100px;
+    height: 22px;
+}
+
+.tableClass {
+    text-align: center;
+    width: 100%;
+}
+
+.even-row {
+    background-color: #FCFFFE;
+}
+
+.odd-row {
+    background-color: #dddddd;
+}
+
+.active-row {
+    background-color: #FFEBDA !important;
+    cursor: pointer;
+}
+
+.painelExternoLogin {
+    width: 100%;
+    height: 100%;
+}
+
+.painelExternoLogin tr {
+    height: 100%;
+}
+
+.painelExternoLogin td {
+    vertical-align: middle;
+
+}
+
+.painelInternoLogin {
+    width: 390px;
+    margin:auto;
+}

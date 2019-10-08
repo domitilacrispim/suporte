@@ -1,0 +1,14 @@
+Requisitos para a instalação do Ocomon:
+ 
+
+    * Servidor Web (preferencialmente Apache);
+    * Linguagem: PHP versão:4.3x, HTML, CSS, Javascript;
+    * Banco de dados: MySQL versão: 4.1x;
+    * Diretiva register_globals=On no arquivo de configuração do PHP(php.ini). 
+    	/*Atualmente o sistema está sendo reescrito para atender à recomendação register_globals=Off*/
+  	
+Notas importantes:
+ 
+    * Para o sistema funcionar adequadamente é necessário que seu navegador permita que sistema rode funções 
+		javascript e aceite cookies do sistema.
+    * Para a visualização dos gráficos é necessário que o PHP esteja compilado com suporte à biblioteca GD;

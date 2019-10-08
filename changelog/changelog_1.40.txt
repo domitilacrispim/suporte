@@ -1,0 +1,23 @@
+Changelog da versão 1.40
+
+
+- Possibilidade de abertura de sub-chamados no sistema; Vinculando chamados e criando dependências.
+
+- Indicação visual sobre chamados vinculados, demonstrando a existência de dependências ativas ou inativas;
+
+- relatório de trocas de peças por período;
+
+- Armazenamento do tempo de documentação* de cada chamado, separado por tipo de documentação e técnico;
+
+- Algumas correções:
+
+    - Correção do erro que acontecia (dependendo da versão do MySQL) na hora da exibição da listagem de softwares cadastrados no sistema;
+
+    - Correção do surgimento de caracteres entranhos no momento do encerramento de um chamado;
+
+    - Correção para o tratamento de caracteres de escape nos chamados, ex: barras (/ | \) e aspas simples;
+
+    - Entre outras :)
+
+
+*Tempo de documentação: o tempo gasto com as edições do chamado no sistema (contabilizado apenas durante as edições), desde a abertura até seu encerramento;

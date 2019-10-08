@@ -1,0 +1,137 @@
+/*
+ * Base structure
+ */
+
+/*
+ * Global add-ons
+ */
+
+body{  background:#f6f6f6 ;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+
+
+/*
+* Sidebar
+*/
+
+/* Hide for mobile, show later */
+.sidebar {
+  /*display: none;*/
+  background-color: #f6f6f6;
+}
+.sidebar .navbar-toggle {
+  background-color: #2a9896;
+}
+.sidebar .navbar-toggle:hover,
+.sidebar .navbar-toggle:focus {
+  background-color: #2f6d6c;
+}
+.sidebar .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+
+
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f6f6f6;
+    border-right: 1px solid #eee;
+    width:220px;
+  }
+  .sidebar .navbar-collapse {padding:0}
+}
+.sidebar img{ margin:5px 0}
+
+.sidebar .img-user {
+  float: left;
+  margin: 7px 5px 5px 15px;
+}
+.sidebar .desc-user {
+  float: left;
+  margin: 5px 0;
+  width: 155px;
+  height: 35px;
+  overflow: hidden;
+}
+.sidebar .desc-user p {
+  margin: 1px 3px;
+  padding: 0;
+}
+.sidebar .desc-user p.user {
+  font-weight: bold;
+  font-size: 14px;
+  color: #2a9896;
+}
+
+.sidebar .desc-user p.desc {
+  font-size:10px;
+  color: rgb(38, 38, 38);
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -15px; /* 20px padding + 1px border */
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: -15px;
+}
+.nav-sidebar > li > a {
+  color:#373737;
+  padding: 8px 20px;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #f0f0f0;
+  border-top: 1px solid #E9E9E9 !important;
+  border-bottom: 1px solid #E9E9E9 !important;
+}
+
+
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a > span,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #2a9896;
+  background-color: #e7e7e7;
+}
+.nav-sidebar > .active span.selected{
+  background-image: url("../img/sidebar-menu-arrow.png");
+  display: block;
+  width: 8px;
+  height: 25px;
+  float: right;
+  position: absolute;
+  right: 0px;
+  top: 6px;
+}
+
+.nav-sidebar > li > a:hover{
+  color: #373737;
+  background-color: #dfdfdf;
+}
+.nav-sidebar > li > a > span{ color:#888888; margin-right:8px;}
+
+
+.nav-sidebar > li > ul > li a {
+  color:#373737;
+  padding: 8px 20px;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #f0f0f0;
+  border-top: 1px solid #E9E9E9 !important;
+  border-bottom: 1px solid #E9E9E9 !important;
+}
+
+.nav  > li > ul > li > a, .nav  > li > ul > li > ul > li > a{
+  position: relative;
+  display: block;
+  padding: 5px;
+}
+
+.font-10{font-size: 10px}
