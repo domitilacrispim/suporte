@@ -49,7 +49,7 @@
 
 
     $query2 = "SELECT ver_nao_atribuidos FROM usuarios WHERE user_id = ".$_SESSION['s_uid']." LIMIT 1";
-    $resultado2 = $PDO->query($query2) or die ('ERRO AO TENTAR RECUPERAR AS INFORMA��ES DE USU�RIO! '.$query2);
+    $resultado2 = $PDO->query($query2) or die ('ERRO AO TENTAR RECUPERAR AS INFORMAÇÕES DE USUÁRIO! '.$query2);
     $linha2 = $resultado2->fetch(PDO::FETCH_ASSOC);
 
     $nao_atrib = $linha2['ver_nao_atribuidos'];
@@ -69,7 +69,7 @@ print "<link rel=stylesheet type='text/css' href='includes/css/estilos.css'>";
 					"<TABLE  cellspacing='0' border='0' cellpadding='0' bgcolor='".TAB_COLOR."'>".
 							"<TR>";
 							$cor1 = TD_COLOR;
-							print  "<TD bgcolor='".$cor1."' nowrap><b>OcoMon - M�dulo de ocorrências</b></TD><td width='20%' nowrap><p class='parag'><b>".transvars(date ("l d/m/Y H:i"),$TRANS_WEEK)."</b></p></TD>"; 
+							print  "<TD bgcolor='".$cor1."' nowrap><b>OcoMon - Módulo de ocorrências</b></TD><td width='20%' nowrap><p class='parag'><b>".transvars(date ("l d/m/Y H:i"),$TRANS_WEEK)."</b></p></TD>";
 							print "</TR>".
 					"</TABLE>".
 			"</TD>".
@@ -83,7 +83,7 @@ print "<link rel=stylesheet type='text/css' href='includes/css/estilos.css'>";
 	
 	$qryTotal = "select a.sistema area, a.sis_id area_cod from ocorrencias o left join sistemas a on o.sistema = a.sis_id". 	
 			" left join `status` s on s.stat_id = o.status where o.sistema in (".$uareas.") and s.stat_painel in (1,2) ";
-	$execTotal = $PDO->query($qryTotal) or die ('ERRO NA TOTALIZA��O DAS ocorrênciaS!'.$qryTotal);
+	$execTotal = $PDO->query($qryTotal) or die ('ERRO NA TOTALIZAÇÃO DAS ocorrênciaS!'.$qryTotal);
 	$regTotal = $execTotal->rowCount();
 	
 	//Todas as �reas que o usu�rio percente
@@ -99,7 +99,7 @@ print "<link rel=stylesheet type='text/css' href='includes/css/estilos.css'>";
 	
 	print "<tr><td colspan='7'><IMG ID='imggeral' SRC='./includes/icons/close.png' width='9' height='9' ".
 			"STYLE=\"{cursor: pointer;}\" onClick=\"invertView('geral')\">&nbsp;<b>Existem <font color='red'>".$regTotal."</font>".
-			" ocorrências em aberto no sistema para as �reas que voc� faz parte.</b></td></tr>";
+			" ocorrências em aberto no sistema para as áreas que você faz parte.</b></td></tr>";
 
 	print "<tr><td style='{padding-left:5px;}'><div id='geral' >"; //style='{display:none}'
 	$a = 0;
@@ -111,7 +111,7 @@ print "<link rel=stylesheet type='text/css' href='includes/css/estilos.css'>";
 			print "<TABLE border='0' cellpadding='5' cellspacing='0' align='center' width='100%'>";
 			print "<tr><td colspan='7'><IMG ID='imgocorrencias".$b."' SRC='./includes/icons/close.png' width='9' height='9' ".
 						"STYLE=\"{cursor: pointer;}\" onClick=\"invertView('ocorrencias".$b."')\">&nbsp;<b>Existem <font color='red'>".$rowAreas['total']."</font>".
-						" ocorrências em aberto no sistema para a �rea: <font color='green'>".$rowAreas['area']."</font></b></td></tr>";
+						" ocorrências em aberto no sistema para a área: <font color='green'>".$rowAreas['area']."</font></b></td></tr>";
 
 			print "<tr><td style='{padding-left:5px;}'><div id='ocorrencias".$b."'>"; //style='{display:none}'
 
@@ -137,7 +137,7 @@ print "<link rel=stylesheet type='text/css' href='includes/css/estilos.css'>";
                             " o.status = " . $rowStatus['stat_id'] . "";
                         $execDetail = $PDO->query($qryDetail) or die ('ERRO NA TENTATIVA DE RECUPERAR OS DADOS DAS ocorrênciaS! ' . $qryDetail);
 
-                        print "<tr class='header'><td>N�mero</td><td>Problema</td><td>Contato<br>ramal</td><td>Local<br>Descric�o</td><td>�ltimo Operador</td></tr>";
+                        print "<tr class='header'><td>Número</td><td>Problema</td><td>Contato<br>ramal</td><td>Local<br>Descricão</td><td>Último Operador</td></tr>";
 
                         $j = 2;
                         while ($rowDetail =$execDetail->fetch(PDO::FETCH_ASSOC)) {
@@ -151,7 +151,7 @@ print "<link rel=stylesheet type='text/css' href='includes/css/estilos.css'>";
                             print "<tr class=" . $trClass . " id='linha" . $j . "" . $a . "' onMouseOver=\"destaca('linha" . $j . "" . $a . "');\" onMouseOut=\"libera('linha" . $j . "" . $a . "');\"  onMouseDown=\"marca('linha" . $j . "" . $a . "');\">";
 
                             $qryImg = "select * from imagens where img_oco = " . $rowDetail['numero'] . "";
-                            $execImg = $PDO->query($qryImg) or die ("ERRO NA TENTATIVA DE RECUPERAR AS INFORMA��ES DE IMAGENS!");
+                            $execImg = $PDO->query($qryImg) or die ("ERRO NA TENTATIVA DE RECUPERAR AS INFORMAÇÕES DE IMAGENS!");
                             $rowTela = $execImg->fetch(PDO::FETCH_ASSOC);
                             $regImg = $execImg->rowCount();
                             if ($regImg != 0) {
@@ -160,26 +160,26 @@ print "<link rel=stylesheet type='text/css' href='includes/css/estilos.css'>";
 
 
                             $sqlSubCall = "select * from ocodeps where dep_pai = " . $rowDetail['numero'] . " or dep_filho=" . $rowDetail['numero'] . "";
-                            $execSubCall = $PDO->query($sqlSubCall) or die ('ERRO NA TENTATIVA DE RECUPERAR AS INFORMA��ES DOS SUBCHAMADOS!<br>' . $sqlSubCall);
+                            $execSubCall = $PDO->query($sqlSubCall) or die ('ERRO NA TENTATIVA DE RECUPERAR AS INFORMAÇÕES DOS SUBCHAMADOS!<br>' . $sqlSubCall);
                             $regSub = $execSubCall->rowCount();
                             if ($regSub > 0) {
                                 #� CHAMADO PAI?
                                 $_sqlSubCall = "select * from ocodeps where dep_pai = " . $rowDetail['numero'] . "";
-                                $_execSubCall = $PDO->query($_sqlSubCall) or die ('ERRO NA TENTATIVA DE RECUPERAR AS INFORMA��ES DOS SUBCHAMADOS!<br>' . $_sqlSubCall);
+                                $_execSubCall = $PDO->query($_sqlSubCall) or die ('ERRO NA TENTATIVA DE RECUPERAR AS INFORMAÇÔES DOS SUBCHAMADOS!<br>' . $_sqlSubCall);
                                 $_regSub = $_execSubCall->rowCount();
                                 $comDeps = false;
                                 while ($rowSubPai = $_execSubCall->fetch(PDO::FETCH_ASSOC)) {
                                     $_sqlStatus = "select o.*, s.* from ocorrencias o, `status` s  where o.numero=" . $rowSubPai['dep_filho'] . " and o.`status`=s.stat_id and s.stat_painel not in (3) ";
-                                    $_execStatus = $PDO->query($_sqlStatus) or die ('ERRO NA TENTATIVA DE RECUPERAR AS INFORMA��ES DE STATUS DOS CHAMADOS FILHOS<br>' . $_sqlStatus);
+                                    $_execStatus = $PDO->query($_sqlStatus) or die ('ERRO NA TENTATIVA DE RECUPERAR AS INFORMAÇÔES DE STATUS DOS CHAMADOS FILHOS<br>' . $_sqlStatus);
                                     $_regStatus = $_execStatus->rowCount();
                                     if ($_regStatus > 0) {
                                         $comDeps = true;
                                     }
                                 }
                                 if ($comDeps) {
-                                    $imgSub = "<img src='includes/icons/view_tree_red.png' width='16' height='16' title='Chamado com v�nculos pendentes'>";
+                                    $imgSub = "<img src='includes/icons/view_tree_red.png' width='16' height='16' title='Chamado com vínculos pendentes'>";
                                 } else
-                                    $imgSub = "<img src='includes/icons/view_tree_green.png' width='16' height='16' title='Chamado com v�nculos mas sem pend�ncias'>";
+                                    $imgSub = "<img src='includes/icons/view_tree_green.png' width='16' height='16' title='Chamado com vínculos mas sem pendências'>";
                             } else
                                 $imgSub = "";
 

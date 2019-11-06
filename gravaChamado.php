@@ -22,7 +22,7 @@
 
 	$data = date ("d/m/Y H:i"); //,$TRANS_WEEK);
 
-	$query = "INSERT INTO ocorrencias (problema, descricao, instituicao, equipamento, sistema, contato, telefone, local, operador, data_abertura, data_fechamento, status, data_atendimento, aberto_por ) values (54,'".noHtml($_POST['descricao'])."  Email: ".noHtml($_POST['email']). " IP da m�quina: ".$_POST['IP']."',1,NULL,11,'".noHtml($_POST['contato'])."',' ".$_POST['telefone']."',$local,1,NOW(),NULL,1,NULL,1)";
+	$query = "INSERT INTO ocorrencias (problema, descricao, instituicao, equipamento, sistema, contato, telefone, local, operador, data_abertura, data_fechamento, status, data_atendimento, aberto_por ) values (54,'".noHtml($_POST['descricao'])."  Email: ".noHtml($_POST['email']). " IP da máquina: ".$_POST['IP']."',1,NULL,11,'".noHtml($_POST['contato'])."',' ".$_POST['telefone']."',$local,1,NOW(),NULL,1,NULL,1)";
 	
 	$resultado = mysql_query($query) or die ("ERRO NA TENTATIVA DE INCLUIR A ocorrência NO SISTEMA!");
 	$numero = mysql_insert_id();
@@ -93,7 +93,7 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="aw-page-title">Ocomon - M�dulo de ocorrências</h1>
+                    <h1 class="aw-page-title">Ocomon - Módulo de ocorrências</h1>
                 </div>
                 <div class="col-md-6 text-right">
                     <p><?php echo transvars(date ("l d/m/Y H:i"),$TRANS_WEEK) ?></p>
@@ -109,8 +109,8 @@
 
                     <? if ($numero > 0 ){?>
                     <div class="alert alert-success" style="font-size: 14px">
-                        ocorrência incluida com sucesso! N�mero: <strong><?echo $numero ?></strong>
-                        <br>Anote este n�mero para consultar o andamento desta ocorrência.
+                        ocorrência incluida com sucesso! Número: <strong><?echo $numero ?></strong>
+                        <br>Anote este número para consultar o andamento desta ocorrência.
                     </div>
 
 

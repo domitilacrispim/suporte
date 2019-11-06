@@ -1,19 +1,19 @@
 <html>
 <?php
  /*                        Copyright 2005 Fl?vio Ribeiro
-  
+
          This file is part of OCOMON.
-  
+
          OCOMON is free software; you can redistribute it and/or modify
          it under the terms of the GNU General Public License as published by
          the Free Software Foundation; either version 2 of the License, or
          (at your option) any later version.
-  
+
          OCOMON is distributed in the hope that it will be useful,
          but WITHOUT ANY WARRANTY; without even the implied warranty of
          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
          GNU General Public License for more details.
-  
+
          You should have received a copy of the GNU General Public License
          along with Foobar; if not, write to the Free Software
          Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
@@ -21,10 +21,10 @@
 
   	is_file( "./includes/config.inc.php" )
   	or die( "Voc? precisa configurar o arquivo config.inc.php em OCOMON/INCLUDES/para iniciar o uso do OCOMON!<br>Leia o arquivo <a href='README.TXT'>README.TXT</a> para obter as principais informa??es sobre a instala??o do OCOMON!" );
-		
+
 	session_start();
 	session_destroy();
-                
+
     include ("PATHS.php");
 	include ("".$includesPath."var_sessao.php");
     include ("includes/functions/funcoes.inc");
@@ -34,15 +34,17 @@
 
  	$uLogado = $_SESSION['s_usuario'];
 	if (empty($uLogado)) {
-		$uLogado = "N?o logado";
+		$uLogado = "Não logado";
 		$logInfo = "Logon";
 	} else {
 		$logInfo = "Sair";
 	}
 ?>
 <head>
+
+    <META CHARSET = 'utf-8'>
 	<title>OCOMON</title>
-	  <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+	  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
       	<link rel=stylesheet type='text/css' href='includes/css/estilos.css'>
       	<link rel=stylesheet type='text/css' href='includes/css/common.css'>
 
@@ -106,7 +108,7 @@
 
 
 <?php if (!empty($_SESSION['s_permissoes']) || $_SESSION['s_nivel']==1){
-	
+
 		include("includes/classes/conecta.class.php");
     $conec = new conexao;
     $PDO = $conec->conectaPDO();
@@ -114,7 +116,7 @@
     $qryconf = $QRY["useropencall"];
 		$execconf = $PDO->query($qryconf) or die('N?o foi poss?vel ler as informa??es de configura??o do sistema!');
 		$rowconf =  $execconf->fetch(PDO::FETCH_ASSOC);
-		
+
 		//$home = "";
 ?>
     <table class='barra' border='0px' id='barra'>
@@ -135,7 +137,7 @@
 ?>
 
 			<td id='OCOMON' width='7%' style='{border-right: thin solid white;}'>
-                <a class='barra'  onMouseOver="destaca('OCOMON')" onMouseOut="libera('OCOMON')" onclick="loadIframe('menu.php?sis=o','menu',' <?php echo $ocoDirPath ?>abertura.php','centro',2,'OCOMON')">Ocorr?ncias</a>
+                <a class='barra'  onMouseOver="destaca('OCOMON')" onMouseOut="libera('OCOMON')" onclick="loadIframe('menu.php?sis=o','menu',' <?php echo $ocoDirPath ?>abertura.php','centro',2,'OCOMON')">Ocorrências</a>
             </td>
 
 <?php
@@ -155,14 +157,14 @@
 
                 <td id='OCOMON' width='7%' STYLE='{border-right: thin solid white;}'>
                     <a class='barra' onMouseOver="destaca('OCOMON')" onMouseOut="libera('OCOMON')"
-                       onclick="loadIframe('menu.php?sis=s','menu','<?php echo $ocoDirPath ?>abertura_user.php','centro',3,'OCOMON')">Ocorr?ncias</a>
+                       onclick="loadIframe('menu.php?sis=s','menu','<?php echo $ocoDirPath ?>abertura_user.php','centro',3,'OCOMON')">Ocorrências</a>
                 </td>
 
 
 <?php       } else { ?>
 
                 <td width='7%' STYLE='{border-right: thin solid #C7C8C6; color:#C7C8C6}'>
-                    Ocorr?ncias
+                    Ocorrências
                 </td>
 
 <?php
@@ -240,19 +242,19 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3>?rea Restrita</h3>
+                    <h3>Área Restrita</h3>
                 </div>
                 <div class="panel-body">
 
                     <?php if ($_GET['inv']=="1") { ?>
                         <div class="alert alert-danger" role="alert">
-                            <li>Usu?rio,senha ou permiss?o inv?lida! AUTH_TYPE: <?php echo AUTH_TYPE ?></li>
+                            <li>Usuário,senha ou permissão inválida! AUTH_TYPE: <?php echo AUTH_TYPE ?></li>
                         </div>
                     <?php } ?>
 
                     <div class="input-group mb-10">
                         <span class="input-group-addon glyphicon glyphicon-user" style="top:0" id="basic-addon1"></span>
-                        <input type='text' class='form-control help' placeholder="Usu?rio" name='login' value='<?php echo $_GET['usu'] ?>' id='idLogin' required>
+                        <input type='text' class='form-control help' placeholder="Usuário" name='login' value='<?php echo $_GET['usu'] ?>' id='idLogin' required>
                     </div>
 
                     <div class="input-group top15">
@@ -276,7 +278,7 @@
     </div> <!-- /container -->
 
 
-<?php					 		
+<?php
 	}
 ?>
 
@@ -289,15 +291,15 @@
 <!--
 var GLArray = new Array();
 function loadIframe(url1,iframeName1, url2,iframeName2,ACCESS,ID) {
-	
+
 	var nivel_user = '<?print $_SESSION['s_nivel'];?>';
 	var HOM = document.getElementById('HOME');
 	var OCO = document.getElementById('OCOMON');
 	var INV = document.getElementById('INVMON');
 	var ADM = document.getElementById('ADMIN');
-	
+
 	if (nivel_user <= ACCESS) {
-  
+
 	  marca(ID);
 	  if (HOM != null)
 		if (ID != "HOME") HOM.style.background ="";
@@ -307,45 +309,45 @@ function loadIframe(url1,iframeName1, url2,iframeName2,ACCESS,ID) {
 		if (ID != "INVMON") INV.style.background ="";
 	  if (ADM != null)
 		if (ID != "ADMIN") ADM.style.background ="";
-  
-  
+
+
 	  if (iframeName2!=""){
 		if ((window.frames[iframeName1]) && (window.frames[iframeName2])) {
-			window.frames[iframeName1].location = url1;  
+			window.frames[iframeName1].location = url1;
 			window.frames[iframeName2].location = url2;
 			return false;
 		}
 	  } else
 		if (window.frames[iframeName1]) {
-			window.frames[iframeName1].location = url1;  
+			window.frames[iframeName1].location = url1;
 			return false;
-		}  
-  
+		}
+
 		else return true;
 	} else {
 		window.alert('Acesso indispon?vel!');
 		return true;
-	
+
 	}
-	
-}	
+
+}
 
 
 		function setHeight(){
-		
+
 		var logado = '<?print $_SESSION['s_logado'];?>';
 			if (logado!=1)
-				document.logar.login.focus();		
+				document.logar.login.focus();
 			var obj = document.getElementById('centro');
-			if (obj!=null) {				
+			if (obj!=null) {
 				obj.style.height = screen.availHeight-170;
 			}
 			var obj2 = document.getElementById('centro2');
-			if (obj2!=null) {				
+			if (obj2!=null) {
 				obj2.style.height = screen.availHeight-170;
 			}
 			marca('<?print $marca;?>');
-		
+
 		}
 
 		 function popup(pagina)	{ //Exibe uma janela popUP
@@ -357,45 +359,45 @@ function loadIframe(url1,iframeName1, url2,iframeName2,ACCESS,ID) {
 
 		function mini_popup(pagina)	{ //Exibe uma janela popUP
 			x = window.open(pagina,'_blank','dependent=yes,width=400,height=260,scrollbars=yes,statusbar=no,resizable=yes');
-			
+
 			x.moveTo(window.parent.screenX+50, window.parent.screenY+50);
 			//x.moveTo(100,100);
-			
+
 			return false
-		}		 
+		}
 
 		function destaca(id){
 				var obj = document.getElementById(id);
 				obj.style.background = '#009966';//C7C8C6
-		}			
-		
+		}
+
 		function libera(id){
 			if ( verificaArray('', id) == false ) {
 				var obj = document.getElementById(id);
 				obj.style.background = '';
 			}
-		}					
-		
+		}
+
 		function marca(id){
 			var obj = document.getElementById(id);
 				verificaArray('guarda', id);
 				if (obj!=null)
 					obj.style.background = '#009966';
 				verificaArray('libera',id);
-		}		
-		
+		}
+
 		function verificaArray(acao, id) {
 			var i;
 			var tamArray = GLArray.length;
 			var existe = false;
-			
+
 			for(i=0; i<tamArray; i++) {
 				if ( GLArray[i] == id ) {
 					existe = true;
 					break;
 				}
 			}
-			
+
 			if ( (acao == 'guarda') && (existe==false) ) {  //
 				GLArray[tamArray] = id;
 			} else if ( (acao == 'libera') ) {
@@ -407,26 +409,26 @@ function loadIframe(url1,iframeName1, url2,iframeName2,ACCESS,ID) {
 						pos++;
 					}
 				}
-				
+
 				GLArray = new Array();
 				var pos = temp.length;
 				for(i=0; i<pos; i++) {
 					GLArray[i] = temp[i];
 				}
 			}
-			
+
 			return existe;
 		}
 
 	function valida(){
-		
-		var ok = validaForm('idLogin','ALFANUM','Usu?rio',1) 
+
+		var ok = validaForm('idLogin','ALFANUM','Usuário',1)
 		if (ok) var ok = validaForm('idSenha','ALFANUM','Senha',1);
-		
+
 		return ok;
-	}		
-		
--->	 
+	}
+
+-->
 </script>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

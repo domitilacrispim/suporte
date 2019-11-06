@@ -69,7 +69,7 @@ function Validar(){
 			}
 
 		if(form1.descricao.value == ""){
-			alert("Informe o problema/servi�o por gentileza.");
+			alert("Informe o problema/serviço por gentileza.");
 			form1.descricao.focus();
 			return false;
 			}
@@ -201,7 +201,7 @@ include("menuChamado.php");
               </table>            </td>
         </tr>
       </table></td>
-    </tr--><tr><td colspan=2 bgcolor=#ECECDB><div align="left" class="style1"><table width="100%" border="0" class="style1"><tr><td bgcolor=#ECECDB><p><strong>* Problema/servi�o solicitado:</strong><b>:</b><br><TEXTAREA class='textarea' name='descricao' id='idDescricao'></textarea></p></td></tr>
+    </tr--><tr><td colspan=2 bgcolor=#ECECDB><div align="left" class="style1"><table width="100%" border="0" class="style1"><tr><td bgcolor=#ECECDB><p><strong>* Problema/serviço solicitado:</strong><b>:</b><br><TEXTAREA class='textarea' name='descricao' id='idDescricao'></textarea></p></td></tr>
     </table></div></td>
     <tr> 
       <td>Obs: * Campos obrigat&oacute;rios </tr>

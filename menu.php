@@ -1,5 +1,5 @@
 <?php
- /*                        Copyright 2005 Fl�vio Ribeiro
+ /*                        Copyright 2005 Fl?vio Ribeiro
   
          This file is part of OCOMON.
   
@@ -31,7 +31,7 @@
         $PDO = $conec->conectaPDO();
 
         $query = "SELECT * FROM usuarios WHERE user_id = $s_uid LIMIT 1";
-        $resultado = $PDO->query($query) or die ('ERRO AO TENTAR RECUPERAR AS INFORMA��ES DE USU�RIO! '.$query);
+        $resultado = $PDO->query($query) or die ('ERRO AO TENTAR RECUPERAR AS INFORMAÇÕES DE USUÁRIO! '.$query);
         $linha = $resultado->fetch(PDO::FETCH_ASSOC);
 
         $partes = explode(' ', $linha['nome']);
@@ -81,12 +81,12 @@
 ..|Documentos|".$invDirPath."materiais.php||".$iconsPath."contents.png|centro
 ..|Estoque|".$invDirPath."estoque.php||".$iconsPath."mouse.png|centro
 .|Consultar
-..|Consulta r�pida|".$invDirPath."consulta_inv.php||".$iconsPath."search.png|centro
+..|Consulta r?pida|".$invDirPath."consulta_inv.php||".$iconsPath."search.png|centro
 ..|Consulta Especial|".$invDirPath."consulta_comp.php||".$iconsPath."consulta.png|centro
-..|Hist�rico|
+..|Hist?rico|
 ...|Por Etiqueta|".$invDirPath."consulta_hist_inv.php||".$iconsPath."tag.png|centro
-...|Localiza��o anterior|".$invDirPath."consulta_hist_local.php|||centro
-.|Estat�ticas e Relat�rios|".$invDirPath."relatorios.php||".$iconsPath."reports.png|centro
+...|Localiza??o anterior|".$invDirPath."consulta_hist_local.php|||centro
+.|Estat?ticas e Relat?rios|".$invDirPath."relatorios.php||".$iconsPath."reports.png|centro
 .|Senha|".$invDirPath."altera_senha.php||".$iconsPath."password.png|centro";
 	
 	
@@ -100,13 +100,13 @@
 	$menuOcomon =".|Inicio|".$ocoDirPath."abertura.php|Tela inicial do Sistema|".$iconsPath."gohome.png|centro
 .|Abrir Chamado|".$ocoDirPath."incluir.php||".$iconsPath."fone.png|centro
 .|Consultar|".$ocoDirPath."consultar.php||".$iconsPath."consulta.png|centro
-.|Busca R�pida|".$ocoDirPath."alterar.php||".$iconsPath."search.png|centro
-.|Solu��es|".$ocoDirPath."consulta_solucoes.php||".$iconsPath."solucoes2.png|centro
-.|Empr�stimos|".$ocoDirPath."emprestimos.php||".$iconsPath."emprestimos.png|centro
+.|Busca R?pida|".$ocoDirPath."alterar.php||".$iconsPath."search.png|centro
+.|Solu??es|".$ocoDirPath."consulta_solucoes.php||".$iconsPath."solucoes2.png|centro
+.|Empr?stimos|".$ocoDirPath."emprestimos.php||".$iconsPath."emprestimos.png|centro
 .|Mural|".$ocoDirPath."avisos.php||".$iconsPath."mural.png|centro
 .|Senha|".$invDirPath."altera_senha.php||".$iconsPath."password.png|centro
-.|Relat�rios ADM|novosite/area.php||".$iconsPath."reports.png|centro
-.|Relat�rios|".$ocoDirPath."relatorios.php|||centro
+.|Relat?rios ADM|novosite/area.php||".$iconsPath."reports.png|centro
+.|Relat?rios|".$ocoDirPath."relatorios.php|||centro
 ..|SLAs|".$ocoDirPath."relatorio_slas_2.php||".$iconsPath."sla.png|centro";
 	
 	$mid->setMenuStructureString($menuOcomon);
@@ -150,7 +150,9 @@
 	
 print "<html>";
 print "<title>Ocomon&Invmon</title>";
-print "</head><body style={background-image:url('MENU_IMG.png'); background-repeat:no-repeat;}>"; //background-position:center;  background-attachment: fixed;
+print "</head>
+<META CHARSET = 'utf-8'>
+<body style={background-image:url('MENU_IMG.png'); background-repeat:no-repeat;}>"; //background-position:center;  background-attachment: fixed;
 	
 	if (isset($s_page_simples)) $simplesHome = $s_page_simples; else $simplesHome = "abertura_user.php";
 	if (isset($s_page_invmon)) $invHome = $s_page_invmon; else $invHome = "abertura.php";
@@ -166,13 +168,13 @@ if ($sis=="o"){
 	$menu = "treemenu2";	
 } else
 if ($sis=="i"){
-	$where = "<a class='menu' href='".$invDirPath."abertura.php' target='centro'>Invent�rio</a>";
+	$where = "<a class='menu' href='".$invDirPath."abertura.php' target='centro'>Inventário</a>";
 	print "<script>window.parent.frames['centro'].location = '".$invDirPath."".$invHome."'</script>";
 
 	$menu="treemenu1";
 } else
 if ($sis=="a"){
-	$where = "Administra��o";//<img src='".$phplmDirPath."menuicons/".$iconsPath."sysadmin.png'>
+	$where = "Administração";//<img src='".$phplmDirPath."menuicons/".$iconsPath."sysadmin.png'>
 	$menu="treemenu3";	
 	print "<script>window.parent.frames['centro'].location = '".$admDirPath."".$admHome."'</script>";
  // para usuarios simples
@@ -221,21 +223,21 @@ if ($sis=="h"){
 	    if ($menu == 'treemenu2'){
 ?>
 
-                    <li ><a target="centro" href="<?php echo $ocoDirPath ?>abertura.php" ><span class="glyphicon glyphicon-home"></span>In�cio</a></li>
+                    <li ><a target="centro" href="<?php echo $ocoDirPath ?>abertura.php" ><span class="glyphicon glyphicon-home"></span>Início</a></li>
                     <li ><a target="centro" href="<?php echo $ocoDirPath ?>incluir.php"><span class="glyphicon glyphicon-phone-alt"></span>Abrir Chamado</a></li>
                     <li ><a target="centro" href="<?php echo $ocoDirPath ?>consultar.php"><span class="glyphicon glyphicon-search"></span>Consultar</a></li>
-                    <li ><a target="centro" href="<?php echo $ocoDirPath ?>alterar.php"><span class="glyphicon glyphicon-search"></span>Busca R�pida</a></li>
-                    <li ><a target="centro" href="<?php echo $ocoDirPath ?>consulta_solucoes.php"><span class="glyphicon glyphicon-check"></span>Solu��es</a></li>
-                    <li ><a target="centro" href="<?php echo $ocoDirPath ?>emprestimos.php"><span class="glyphicon glyphicon-list-alt"></span>Empr�stimos</a></li>
+                    <li ><a target="centro" href="<?php echo $ocoDirPath ?>alterar.php"><span class="glyphicon glyphicon-search"></span>Busca Rápida</a></li>
+                    <li ><a target="centro" href="<?php echo $ocoDirPath ?>consulta_solucoes.php"><span class="glyphicon glyphicon-check"></span>Soluções</a></li>
+                    <li ><a target="centro" href="<?php echo $ocoDirPath ?>emprestimos.php"><span class="glyphicon glyphicon-list-alt"></span>Empréstimos</a></li>
                     <li ><a target="centro" href="<?php echo $ocoDirPath ?>avisos.php"><span class="glyphicon glyphicon-comment"></span>Mural</a></li>
                     <li ><a target="centro" href="<?php echo $invDirPath ?>altera_senha.php"><span class="glyphicon glyphicon-lock"></span>Senha</a></li>
                     <li>
                         <a role="button" data-toggle="collapse" href="#submenu1" aria-controls="submenu1" aria-expanded="false">
-                            <span class="glyphicon glyphicon-stats"></span>Relat�rios
+                            <span class="glyphicon glyphicon-stats"></span>Relatórios
                         </a>
                         <ul id="submenu1" class="collapse" role="tabpanel">
-                            <li ><a target="centro" href="novosite/area.php">Relat�rios ADM</a></li>
-                            <li ><a target="centro" href="<?php echo $ocoDirPath ?>relatorio_slas_2.php">Relat�rios SLAs</a></li>
+                            <li ><a target="centro" href="novosite/area.php">Relatórios ADM</a></li>
+                            <li ><a target="centro" href="<?php echo $ocoDirPath ?>relatorio_slas_2.php">Relatórios SLAs</a></li>
                             <li ><a target="centro" href="<?php echo $ocoDirPath ?>relatorios.php">Outros</a></li>
                         </ul>
                     </li>
@@ -243,7 +245,7 @@ if ($sis=="h"){
         }else if($menu == 'treemenu5'){
 ?>
 
-                    <li ><a target="centro" href="home.php" ><span class="glyphicon glyphicon-home"></span>In�cio</a></li>
+                    <li ><a target="centro" href="home.php" ><span class="glyphicon glyphicon-home"></span>Início</a></li>
                     <li ><a target="centro" href="<?php echo $ocoDirPath ?>abertura_user.php?action=listall"><span class="glyphicon glyphicon-search"></span>Abertos por mim</a></li>
                     <li ><a target="centro" href="<?php echo $ocoDirPath ?>relatorio_chamados_aberto.php"><span class="glyphicon glyphicon-list-alt"></span>Abertos total</a></li>
 
@@ -253,10 +255,10 @@ if ($sis=="h"){
 ?>
             <li>
                 <a role="button" data-toggle="collapse" href="#submenu1" aria-controls="submenu1" aria-expanded="false">
-                    <span class="glyphicon glyphicon-cog"></span>Configura��es
+                    <span class="glyphicon glyphicon-cog"></span>Configurações
                 </a>
                 <ul id="submenu1" class="collapse" role="tabpanel">
-                    <li><a target="centro" href="<?php echo $admDirPath ?>configGeral.php">Configura��es gerais</a></li>
+                    <li><a target="centro" href="<?php echo $admDirPath ?>configGeral.php">Configurações gerais</a></li>
                     <li><a target="centro" href="<?php echo $admDirPath ?>configuserscreen.php">Abertura de chamados</a></li>
                     <li><a target="centro" href="<?php echo $admDirPath ?>configmail.php">E-Mail-SMTP</a></li>
                     <li><a target="centro" href="<?php echo $admDirPath ?>configmsgs.php">E-Mail-mensagens</a></li>
@@ -268,7 +270,7 @@ if ($sis=="h"){
                     <span class="glyphicon glyphicon-phone-alt"></span>ocorrências
                 </a>
                 <ul id="submenu2" class="collapse" role="tabpanel">
-                    <li><a target="centro" href="<?php echo $admDirPath ?>sistemas.php">�reas</a></li>
+                    <li><a target="centro" href="<?php echo $admDirPath ?>sistemas.php">Áreas</a></li>
                     <li><a target="centro" href="<?php echo $admDirPath ?>problemas.php">Problemas</a></li>
                     <li><a target="centro" href="<?php echo $admDirPath ?>status.php">Status</a></li>
                     <li><a target="centro" href="<?php echo $admDirPath ?>prioridades.php">Prioridades</a></li>
@@ -279,7 +281,7 @@ if ($sis=="h"){
 
             <li>
                 <a role="button" data-toggle="collapse" href="#submenu3" aria-controls="submenu3" aria-expanded="false">
-                    <span class="glyphicon glyphicon-inbox"></span>Invent�rio
+                    <span class="glyphicon glyphicon-inbox"></span>Inventário
                 </a>
                 <ul id="submenu3" class="collapse" role="tabpanel">
                     <li><a target="centro" href="<?php echo $admDirPath ?>tipo_equipamentos.php">Equipamentos</a></li>
@@ -289,13 +291,13 @@ if ($sis=="h"){
                             <li><a target="centro" href="<?php echo $admDirPath ?>itens.php?tipo=8">DVD</a></li>
                             <li><a target="centro" href="<?php echo $admDirPath ?>itens.php?tipo=9">Gravador</a></li>
                             <li><a target="centro" href="<?php echo $admDirPath ?>itens.php?tipo=1">HD</a></li>
-                            <li><a target="centro" href="<?php echo $admDirPath ?>itens.php?tipo=10">Placa m�e</a></li>
-                            <li><a target="centro" href="<?php echo $admDirPath ?>itens.php?tipo=7">Mem�ria</a></li>
+                            <li><a target="centro" href="<?php echo $admDirPath ?>itens.php?tipo=10">Placa mãe</a></li>
+                            <li><a target="centro" href="<?php echo $admDirPath ?>itens.php?tipo=7">Memória</a></li>
                             <li><a target="centro" href="<?php echo $admDirPath ?>itens.php?tipo=6">Placa de modem</a></li>
                             <li><a target="centro" href="<?php echo $admDirPath ?>itens.php?tipo=11">Processador</a></li>
                             <li><a target="centro" href="<?php echo $admDirPath ?>itens.php?tipo=3">Placa de rede</a></li>
                             <li><a target="centro" href="<?php echo $admDirPath ?>itens.php?tipo=4">Placa de som</a></li>
-                            <li><a target="centro" href="<?php echo $admDirPath ?>itens.php?tipo=2">V�deo</a></li>
+                            <li><a target="centro" href="<?php echo $admDirPath ?>itens.php?tipo=2">Vídeo</a></li>
                         </ul>
                     </li>
                     <li><a target="centro" href="<?php echo $admDirPath ?>fabricantes.php">Fabricantes</a></li>
@@ -305,12 +307,12 @@ if ($sis=="h"){
                 </ul>
             </li>
 
-            <li ><a target="centro" href="<?php echo $admDirPath ?>usuarios.php"><span class="glyphicon glyphicon-user"></span>Usu�rios</a></li>
+            <li ><a target="centro" href="<?php echo $admDirPath ?>usuarios.php"><span class="glyphicon glyphicon-user"></span>Usuários</a></li>
             <li ><a target="centro" href="<?php echo $admDirPath ?>locais.php"><span class="glyphicon glyphicon-map-marker"></span>Locais</a></li>
             <li ><a target="centro" href="<?php echo $admDirPath ?>unidades.php"><span class="glyphicon glyphicon-pushpin"></span>Unidades</a></li>
             <li ><a target="centro" href="<?php echo $admDirPath ?>ccustos.php"><span class="glyphicon glyphicon-usd"></span>Centros de Custo</a></li>
-            <li ><a target="centro" href="<?php echo $admDirPath ?>permissoes.php"><span class="glyphicon glyphicon-lock"></span>Permiss�es</a></li>
-            <li ><a target="centro" href="novosite/area.php"><span class="glyphicon glyphicon-stats"></span>Relat�rios ADM</a></li>
+            <li ><a target="centro" href="<?php echo $admDirPath ?>permissoes.php"><span class="glyphicon glyphicon-lock"></span>Permissões</a></li>
+            <li ><a target="centro" href="novosite/area.php"><span class="glyphicon glyphicon-stats"></span>Relatórios ADM</a></li>
             <li ><a target="centro" href="<?php echo $invDirPath ?>altera_senha.php"><span class="glyphicon glyphicon-lock"></span>Senha</a></li>
 
 
@@ -325,7 +327,7 @@ if ($sis=="h"){
 
 
     <div class="text-center font-10">
-        <a href='http://ocomonphp.sourceforge.net' target='_blank'>OcoMon</a> - Monitor de ocorrências e Invent�rio de equipamentos de inform�tica.<br>Vers�o: <?php echo VERSAO?> - Licen�a GPL
+        <a href='http://ocomonphp.sourceforge.net' target='_blank'>OcoMon</a> - Monitor de ocorrências e Inventário de equipamentos de informática.<br>Versão: <?php echo VERSAO?> - Licença GPL
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

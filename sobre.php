@@ -39,11 +39,11 @@
 	print "<p>No in�cio de 2005, os dois sistemas: Ocomon e Invmon foram finalmente 100% integrados ganhando um novo ".
 			"layout e permancendo com o nome �nico de OCOMON. Tendo ent�o sua utiliza��o baseada em dois ".
 			"m�dulos principais: ".
-			"<ul><li>M�dulo de ocorrências;</li>".
-			"<li>M�dulo de Invent�rio;</li></ul>".
+			"<ul><li>Módulo de ocorrências;</li>".
+			"<li>Módulo de Invent�rio;</li></ul>".
 			"</p>";
 
-	print "<p>Principais fun��es do m�dulo de <b>ocorrências:</b></p>";
+	print "<p>Principais fun��es do Módulo de <b>ocorrências:</b></p>";
 	print "<ul><li>abertura de chamados de suporte por �rea de compet�ncia;</li>".
 			"<li>v�nculo do chamado com a etiqueta de patrim�nio do equipamento;</li>".
 			"<li>busca r�pida de informa��es referentes ao equipamento ".
@@ -61,7 +61,7 @@
 			"<li>relat�rios gerenciais;</li>".
 			"<li>controle de SLAs;</li></ul>";
 	
-	print "<p>Principais fun��es do <b>m�dulo de invent�rio:</b></p>";
+	print "<p>Principais fun��es do <b>Módulo de invent�rio:</b></p>";
 	print "<ul><li>cadastro detalhado das informa��es (configura��o) de hardware do equipamento;</li>".
 			"<li>cadastro de informa��es cont�beis do equipamento (valor, centro de custo,localiza��o, reitoria, fornecedor..);</li>".
 			"<li>cadastro de modelos de configura��o para carga r�pida de informa��es de novos equipamentos;</li>".

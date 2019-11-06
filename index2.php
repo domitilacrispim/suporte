@@ -19,7 +19,7 @@
   */
 
   	is_file( "./includes/config.inc.php" )
-  	or die( "Voc� precisa configurar o arquivo config.inc.php em OCOMON/INCLUDES/para iniciar o uso do OCOMON!<br>Leia o arquivo <a href='README.TXT'>README.TXT</a> para obter as principais informa��es sobre a instala��o do OCOMON!" );  
+  	or die( "Você precisa configurar o arquivo config.inc.php em OCOMON/INCLUDES/para iniciar o uso do OCOMON!<br>Leia o arquivo <a href='README.TXT'>README.TXT</a> para obter as principais informações sobre a instalação do OCOMON!" );
   
 		
 	session_start();
@@ -35,7 +35,7 @@
 
  	$uLogado = $_SESSION['s_usuario'];
  if (empty($uLogado)) {
-	$uLogado = "N�o logado";
+	$uLogado = "Não logado";
 	$logInfo = "<font color='white'>Logon</font>";
  } else
 	$logInfo = "<font color='red'>Logoff</font>";
@@ -70,7 +70,7 @@ print "<tr><td colspan='2'>";
 print "<table class='topo' border='0px' id='cabecalho'>
    
     <td rowspan='2'><img src='pixture_reloaded_logo.png' height='67' width='600'>
-	<td><font color='white'> Usu�rio:</font><b> ".$uLogado."</b> 
+	<td><font color='white'> Usuário:</font><b> ".$uLogado."</b> 
     <td><a href='".$commonPath."logout.php'>".$logInfo."<img src='includes/icons/password2.png' style=\"{vertical-align:middle;}\" height='15' width='15' border='0'></a>
   <tr> 
     <td colspan='2'><div align='right'><img src='MAIN_LOGO2.png' height='30' width='90'></div>  
@@ -94,7 +94,7 @@ print "<table class='barra' border='0px' id='barra'><tr>";
 		$conec->conecta('MYSQL');			
 
 		$qryconf = $QRY["useropencall"];
-		$execconf = mysql_query($qryconf) or die('N�o foi poss�vel ler as informa��es de configura��o do sistema!');
+		$execconf = mysql_query($qryconf) or die('Não foi possível ler as informações de configuração do sistema!');
 		$rowconf = mysql_fetch_array($execconf);
 		
 		//$home = "";
@@ -122,14 +122,14 @@ print "<table class='barra' border='0px' id='barra'><tr>";
 			print "<td width='7%' STYLE='{border-right: thin solid #C7C8C6; color:#C7C8C6}'>&nbsp;ocorrências&nbsp;</td>";
 		
 		if ($_SESSION['s_invmon']==1){
-			print "<td id='INVMON' width='7%' STYLE='{border-right: thin solid white;}'><a class='barra' onMouseOver=\"destaca('INVMON')\" onMouseOut=\"libera('INVMON')\" onclick=\"loadIframe('menu.php?sis=i','menu','".$invDirPath."abertura.php','centro',2,'INVMON')\">&nbsp;Invent�rio&nbsp;</a></td>"; //abertura.php   -   ".$invDirPath."".$invHome."
+			print "<td id='INVMON' width='7%' STYLE='{border-right: thin solid white;}'><a class='barra' onMouseOver=\"destaca('INVMON')\" onMouseOut=\"libera('INVMON')\" onclick=\"loadIframe('menu.php?sis=i','menu','".$invDirPath."abertura.php','centro',2,'INVMON')\">&nbsp;Inventário&nbsp;</a></td>"; //abertura.php   -   ".$invDirPath."".$invHome."
 			if ($sis=="") $sis="sis=i";
 			if ($sisPath=="") $sisPath=$invDirPath;
 			$sistem = "abertura.php";
 			if ($marca=="") $marca = "INVMON";
 			//$home = "home=true";
 		} else
-			print "<td width='7%' STYLE='{border-right: thin solid #C7C8C6; color:#C7C8C6}'>&nbsp;Invent�rio&nbsp;</td>";
+			print "<td width='7%' STYLE='{border-right: thin solid #C7C8C6; color:#C7C8C6}'>&nbsp;Inventário&nbsp;</td>";
 		if ($_SESSION['s_nivel']==1) {
 			print "<td id='ADMIN' width='5%' STYLE='{border-right: thin solid white;}'><a class='barra' onMouseOver=\"destaca('ADMIN')\" onMouseOut=\"libera('ADMIN')\" onclick=\"loadIframe('menu.php?sis=a','menu','".$ocoDirPath."abertura_user.php','centro','1','ADMIN')\">&nbsp;Admin&nbsp;</a></td>";
 			if ($sis=="") $sis="sis=a";
@@ -163,11 +163,11 @@ if ($_SESSION['s_logado']){
 		print "<tr><td><table id='login'>";
 		if ($_GET['inv']=="1") {
 			print "<tr align=\"center\">".
-				"<td colspan=2 align=\"center\"><font color='red'>Usu�rio,senha ou permiss�o inv�lida! <br>AUTH_TYPE: ".AUTH_TYPE."<font></td>".
+				"<td colspan=2 align=\"center\"><font color='red'>Usuário,senha ou permissão inválida! <br>AUTH_TYPE: ".AUTH_TYPE."<font></td>".
 				"</tr>";
 		}
 		//print "<br><br><br>";
-		print "<tr><td>Usu�rio:</td><td><input type='text' class='help' name='login' value='".$_GET['usu']."' id='idLogin'></td></tr>
+		print "<tr><td>Usuário:</td><td><input type='text' class='help' name='login' value='".$_GET['usu']."' id='idLogin'></td></tr>
 			<tr><td>Senha:</td><td><input type='password' class='help' name='password'  id='idSenha'></td><td><input type='submit' class='blogin' value='login'></td></tr>";
 		
 			print "<tr><td colspan='3'>&nbsp;</td></tr>";
@@ -175,7 +175,7 @@ if ($_SESSION['s_logado']){
 		print "</table></td></tr>";		
 		print "</form>";
 	}
-print "<tr><td colspan='2' align='center'><a href='http://ocomonphp.sourceforge.net' target='_blank'>OcoMon</a> - Monitor de ocorrências e Invent�rio de equipamentos de inform�tica.<br>Vers�o: ".VERSAO." - Licen�a GPL</td></tr>";
+print "<tr><td colspan='2' align='center'><a href='http://ocomonphp.sourceforge.net' target='_blank'>OcoMon</a> - Monitor de ocorrências e Inventário de equipamentos de informática.<br>Versão: ".VERSAO." - Licença GPL</td></tr>";
 print "</table>";
 
 ?>
@@ -217,7 +217,7 @@ function loadIframe(url1,iframeName1, url2,iframeName2,ACCESS,ID) {
   
 		else return true;
 	} else {
-		window.alert('Acesso indispon�vel!');
+		window.alert('Acesso indisponível!');
 		return true;
 	
 	}
@@ -308,7 +308,7 @@ function loadIframe(url1,iframeName1, url2,iframeName2,ACCESS,ID) {
 
 	function valida(){
 		
-		var ok = validaForm('idLogin','ALFANUM','Usu�rio',1) 
+		var ok = validaForm('idLogin','ALFANUM','Usuário',1)
 		if (ok) var ok = validaForm('idSenha','ALFANUM','Senha',1);
 		
 		return ok;

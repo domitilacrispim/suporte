@@ -126,7 +126,7 @@ $hoje = date("Y-m-d H:i:s");
 
                     <div class="row">
                         <div class="col-md-6">
-                            <h1 class="aw-page-title">Ocomon - M�dulo de ocorrências</h1>
+                            <h1 class="aw-page-title">Ocomon - Módulo de ocorrências</h1>
                         </div>
                         <div class="col-md-6 text-right">
                             <p><?php echo transvars(date ("l d/m/Y H:i"),$TRANS_WEEK) ?></p>
@@ -305,7 +305,7 @@ $hoje = date("Y-m-d H:i:s");
             <table class='table'>
 				
                 <tr class='header'>
-                    <td>N�mero</td>
+                    <td>Número</td>
                     <td>Problema</td>
                     <td width="180">Contato / Operador</td>
                     <td>Local</td>
@@ -428,26 +428,26 @@ $hoje = date("Y-m-d H:i:s");
 			} else
 				$imgSub = "";*/
 			$sqlSubCall = "select * from ocodeps where dep_pai = ".$row['numero']." or dep_filho=".$row['numero']."";
-			$execSubCall = $PDO->query($sqlSubCall) or die ('ERRO NA TENTATIVA DE RECUPERAR AS INFORMA��ES DOS SUBCHAMADOS!<br>'.$sqlSubCall);
+			$execSubCall = $PDO->query($sqlSubCall) or die ('ERRO NA TENTATIVA DE RECUPERAR AS INFORMAÇÔES DOS SUBCHAMADOS!<br>'.$sqlSubCall);
 			$regSub = $execSubCall->rowCount();
 			if ($regSub > 0) {
 				#� CHAMADO PAI?
 				$sqlSubCall = "select * from ocodeps where dep_pai = ".$row['numero']."";
-				$execSubCall = $PDO->query($sqlSubCall) or die ('ERRO NA TENTATIVA DE RECUPERAR AS INFORMA��ES DOS SUBCHAMADOS!<br>'.$sqlSubCall);
+				$execSubCall = $PDO->query($sqlSubCall) or die ('ERRO NA TENTATIVA DE RECUPERAR AS INFORMAÇÔES DOS SUBCHAMADOS!<br>'.$sqlSubCall);
 				$regSub = $execSubCall->rowCount();
 				$comDeps = false;
 				while ($rowSubPai = $execSubCall->fetch(PDO::FETCH_ASSOC)){
 					$sqlStatus = "select o.*, s.* from ocorrencias o, `status` s  where o.numero=".$rowSubPai['dep_filho']." and o.`status`=s.stat_id and s.stat_painel not in (3) ";
-					$execStatus = $PDO->query($sqlStatus) or die ('ERRO NA TENTATIVA DE RECUPERAR AS INFORMA��ES DE STATUS DOS CHAMADOS FILHOS<br>'.$sqlStatus);
+					$execStatus = $PDO->query($sqlStatus) or die ('ERRO NA TENTATIVA DE RECUPERAR AS INFORMAÇÔES DE STATUS DOS CHAMADOS FILHOS<br>'.$sqlStatus);
 					$regStatus = $execStatus->rowCount();
 					if ($regStatus > 0) {
 						$comDeps = true;
 					}
 				}
 				if ($comDeps) {
-					$imgSub = "<img src='includes/icons/view_tree_red.png' width='16' height='16' title='Chamado com v�nculos pendentes'>";
+					$imgSub = "<img src='includes/icons/view_tree_red.png' width='16' height='16' title='Chamado com vínculos pendentes'>";
 				} else
-					$imgSub =  "<img src='includes/icons/view_tree_green.png' width='16' height='16' title='Chamado com v�nculos mas sem pend�ncias'>";
+					$imgSub =  "<img src='includes/icons/view_tree_green.png' width='16' height='16' title='Chamado com vínculos mas sem pendências'>";
 			} else
 				$imgSub = "";
 			

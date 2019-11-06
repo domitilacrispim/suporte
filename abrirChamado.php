@@ -141,7 +141,7 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <h1 class="aw-page-title">Ocomon - M�dulo de ocorrências</h1>
+                        <h1 class="aw-page-title">Ocomon - Módulo de ocorrências</h1>
                     </div>
                     <div class="col-md-6 text-right">
                         <p><?php echo transvars(date ("l d/m/Y H:i"),$TRANS_WEEK) ?></p>
